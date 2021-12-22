@@ -8,23 +8,26 @@ import mathFo from '../images/Math-logo.jpeg'
 import { GithubRepoCard } from '../components/repocard/GithubRepoCard';
 import { getLatestRepos } from '../service/git.service';
 import SkillCard from '../components/card/SkillCard';
-
+import SkillBar from 'react-skillbars';
 
 function Home() {
 
     const [repos, setRepos] = useState()
     const [skills, setSkills] = useState([
-        {
-            name: "UI/UX",
-            description: "---",
-            thumbnail: ""
-        },
-        {
-            name: "Spring",
-            description: "---",
-            thumbnail: ""
-        }
+        { type: "iOS", level: 95 },
+        { type: "React JS", level: 90 },
+        { type: "Node JS", level: 80 },
+        { type: "Spring", level: 75 },
+        { type: "ReactNative", level: 70 },
     ])
+
+    const colors = {
+        bar: '#ef4444',
+        title: {
+            text: '#abc123',
+            background: '#fff',
+        }
+    }
 
     useEffect(async () => {
 
@@ -50,13 +53,6 @@ function Home() {
                     <img src={me} alt="profile" className="w-64" />
                 </div>
             </div>
-
-            <h1 className="text-4xl subtitle dark:text-white my-16">Skills</h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto lg:-mt-10 gap-y-10">
-                <SkillCard />
-            </div>
-
             <h1 className="text-4xl subtitle dark:text-white my-16">Lastest Code</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto lg:-mt-10 gap-y-10">
@@ -67,33 +63,23 @@ function Home() {
                         <GithubRepoCard latestRepo={latestRepo} key={idx} />
                     ))}
             </div>
+            <h1 className="text-4xl subtitle dark:text-white my-16">Skills</h1>
+
+            <SkillBar colors={colors} skills={skills} />
+
+
 
 
             <h1 className="text-4xl subtitle dark:text-white my-16">Lastest Project 👾👨‍💻</h1>
 
             <div className="my-5">
                 <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-8">
-                    <div class="col-start-2">
+                    <div>
                         <img src={figmaScreen} alt="fotbook-UI" />
-                    </div>
-                    <div>
-                        <img src={figma} alt="figma-fotbook" />
-                    </div>
-                    <div class="col-start-1">
-                        <img src={hrdLogo} alt="hrd-logo" />
-                    </div>
-                    <div class="col-start-1">
-                        <img src={mathFo} alt="fotbook-UI" />
-                    </div>
-                    <div>
-                        <img src={figma} alt="figma-fotbook" />
                     </div>
                 </div>
 
             </div>
-            <h1 className="text-4xl subtitle dark:text-white  mt-20 my-5">Mentor 👾👨‍💻</h1>
-
-
         </main>
     )
 }

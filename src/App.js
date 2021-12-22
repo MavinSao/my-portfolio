@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import About from './pages/About';
 import Blogs from './pages/Blogs';
 import AnimatedCursor from "react-animated-cursor"
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
         </Routes>
       </Navbar>
+      <Footer />
     </>
   );
 }
