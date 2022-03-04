@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import me from '../components/navbar/logo/me.png'
+import me from '../images/me.png'
 import Typist from 'react-text-typist';
 import figma from '../images/figma.png'
 import figmaScreen from '../images/figma-2.png'
@@ -46,18 +46,16 @@ function Home() {
                     <h1 className="text-6xl my-5 title dark:text-white mt-5">iOS + Web {' '}
                         <Typist className="dark:text-white mt-5" pauseTime={2000} typingSpeed={200} cursorClassName={'myCursor'} sentences={['Developer', 'Instructor']} loop={true} /></h1>
                     <h2 className="text-xl dark:text-white mt-5">from Korea Software HRD Center, Cambodia.</h2>
-                    <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">I specialize in making beautiful UI’s for mobile and web interfaces.
-                        As a side hobby,<br /> I am also an IT instructor handle in Mobile development and Web development Subject.</p>
+                    <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">I specialize in Mobile development and Web development Subject. </p>
                 </div>
                 <div className="profile bg-slate-200 rounded-full">
-                    <img src={me} alt="profile" className="w-64" />
+                    <img src={me} alt="profile" className="w-80" />
                 </div>
             </div>
             <h1 className="text-4xl subtitle dark:text-white my-16">Lastest Code</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto lg:-mt-10 gap-y-10">
                 {/* Single github Repo */}
-
                 {repos &&
                     repos.map((latestRepo, idx) => (
                         <GithubRepoCard latestRepo={latestRepo} key={idx} />

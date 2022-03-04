@@ -30,20 +30,10 @@ function Navbar({ children }) {
                                             />
                                             <h1 className="font-medium text-gray-500">Mavin Sao</h1>
                                         </a>
-
-                                        <div className="flex items-center md:hidden ">
-                                            <Toggle />
-                                            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                <span className="sr-only">Open main menu</span>
-                                                <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                                            </Popover.Button>
-                                        </div>
-
                                     </div>
                                 </div>
-
                                 <div className="flex items-center">
-                                    <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                                    <div className="md:block md:ml-10 md:pr-4 md:space-x-8">
                                         {navigation.map((item) => (
                                             <Link key={item.name} to={item.to} className="font-medium text-gray-500 hover:text-gray-900">
                                                 {item.name}
@@ -51,9 +41,11 @@ function Navbar({ children }) {
                                         ))}
 
                                     </div>
-                                    <div className="hidden md:block" >
                                         <Toggle />
-                                    </div>
+                                        <Popover.Button className="bg-white md:hidden inline-flex rounded-md p-2  items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                <span className="sr-only">Open main menu</span>
+                                                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                                        </Popover.Button>
 
                                 </div>
 
