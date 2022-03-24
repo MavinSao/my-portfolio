@@ -13,15 +13,16 @@ const navigation = [
 ]
 
 function Navbar({ children }) {
+
     return (
-        <div className="relative overflow-hidden">
+        <div>
             <div className="max-w-6xl mx-auto">
                 <div className="relative z-10 lg:w-full sm:pb-20">
                     <Popover>
                         <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
                             <nav className="relative flex w-full items-center justify-between sm:h-10">
                                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                                    <div className="flex items-center justify-between w-full md:w-auto md:jus">
+                                    <div className="flex items-center justify-between w-full md:w-auto md:justify">
                                         <a href="#" className="flex items-center title">
                                             <span className="sr-only">Mavin Sao</span>
                                             <img
@@ -33,22 +34,20 @@ function Navbar({ children }) {
                                     </div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="md:block md:ml-10 md:pr-4 md:space-x-8">
-                                        {navigation.map((item) => (
-                                            <Link key={item.name} to={item.to} className="font-medium text-gray-500 hover:text-gray-900">
-                                                {item.name}
-                                            </Link>
-                                        ))}
-
-                                    </div>
+                                        <div className="invisible md:visible md:ml-10 md:pr-4 md:space-x-8">
+                                            {navigation.map((item) => (
+                                                <Link key={item.name} to={item.to} className="font-medium text-gray-500 hover:text-gray-900">
+                                                    {item.name}
+                                                </Link>
+                                            ))}
+                                        </div>
                                         <Toggle />
-                                        <Popover.Button className="bg-white md:hidden inline-flex rounded-md p-2  items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <Popover.Button className="bg-white md:invisible inline-flex rounded-md p-2  items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                                 <span className="sr-only">Open main menu</span>
                                                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
                                         </Popover.Button>
 
                                 </div>
-
                             </nav>
                         </div>
 

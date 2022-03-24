@@ -14,14 +14,16 @@
   font-family: SF-Pro-Text-Medium;
   color: rgb(0, 0, 0);
 }
-
+.swif-color{
+  color: #ef4444;
+}
 .title{
   font-family: SF-Pro-Display-Bold;
   color: #ef4444;
 }
 .subtitle{
   font-family: SF-Pro-Text-Bold;
-  color: rgb(0, 0, 0);
+  color: #ef4444;
 }
 
 .my-text{
